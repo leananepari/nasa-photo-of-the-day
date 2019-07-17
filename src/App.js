@@ -1,13 +1,48 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+
+import Card from "./components/Card";
+import Popup from "./components/Popup";
 
 function App() {
+  const [date, setDate] = useState();
+  const [title, setTitle] = useState();
+  const [media, setMedia] = useState();
+  const [mediaType, setMediaType] = useState();
+  const [explanation, setExplanation] = useState();
+  const [popUp, setPopUp] = useState(false);
+
+  useEffect(() => {
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY") //&date=2012-03-14
+      .then(response => {
+        setDate(response.data.date);
+        setTitle(response.data.title);
+        setMedia(response.data.url);
+        setMediaType(response.data.media_type);
+        setExplanation(response.data.explanation);
+      })
+  }, [])
+
+  function togglePopUp() {
+    setPopUp(!popUp);
+  }
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+    <div className="wrap">
+      <div className="stars"></div>
+      <div className="twinkling"></div>
+      <div className="App">
+        <h1 className="title">NASA Astronomy Photo Of The Day</h1>
+        <div className="date-container">
+          <p className="date-title">Date: </p>
+          <p className="date">{date}</p>
+          <p className="date change" onClick={togglePopUp}>CHANGE</p>
+          {popUp ? 
+          <Popup togglePopUp={togglePopUp}/>
+          : null
+        }
+        </div>
+        <Card title={title} media={media} mediaType={mediaType} explanation={explanation} />
+      </div>
     </div>
   );
 }
