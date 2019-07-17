@@ -4,8 +4,11 @@ function Popup({ togglePopUp }) {
   return (
     <div className="popup">
       <div className='popup_inner'>
-        <input placeholder="enter"></input>
-        <button onClick={() => togglePopUp()}>close</button>
+        <div className="popup-left">
+          <input placeholder="enter"></input>
+          <button className="btn-update">UPDATE</button>
+        </div>
+        <button className="btn-close" onClick={() => togglePopUp()}>x</button>
       </div>
     </div>
   );

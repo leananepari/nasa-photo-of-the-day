@@ -150,6 +150,8 @@ animation:move-twink-back 200s linear infinite;
     background-color: rgba(0,0,0, 0.5);
 
     .popup_inner {
+      display: flex;
+      justify-content: center;
       position: absolute;
       left: 38%;
       right: 38%;
@@ -157,6 +159,29 @@ animation:move-twink-back 200s linear infinite;
       bottom: 60%;
       margin: auto;
       background: white;
+
+      .popup-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+      }
+      .btn-update {
+        width: 50%;
+        text-align: center;
+        justify-self: center;
+        margin: 0 auto;
+        margin-top: 10px;        
+      }
+      .btn-close {
+        height: 20px;
+        // margin-left: 20px;
+        justify-self: baseline;
+      }
     }
   }
 }
