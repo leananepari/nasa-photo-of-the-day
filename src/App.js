@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Button } from 'semantic-ui-react';
-import styled from 'styled-components';
 
 import Card from "./components/Card";
 import Popup from "./components/Popup";

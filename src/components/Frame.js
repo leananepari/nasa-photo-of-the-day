@@ -1,16 +1,33 @@
 import React from "react";
+import styled from 'styled-components';
+
+const PhotoFrame = styled.img `
+  width: 700px;
+  height: 400px;
+  position: relative;
+  z-index: 6;
+  border: 2px solid silver;
+`;
+
+const Iframe = styled.iframe `
+  width: 700px;
+  height: 400px;
+  position: relative;
+  z-index: 6;
+  border: 2px solid silver;
+`
 
 function Frame({ tag, media }) {
   if (tag === 'img') {
     return (
       <>
-        <img alt="" src={media} className="photo-frame"></img>
+        <PhotoFrame alt="" src={media} className="photo-frame"></PhotoFrame>
       </>
     );
   } else {
     return (
       <>
-        <iframe title="photo-frame" src={media} className="photo-frame"></iframe>
+        <Iframe title="photo-frame" src={media} className="photo-frame"></Iframe>
       </>
     );
   }

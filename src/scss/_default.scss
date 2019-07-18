@@ -18,6 +18,7 @@ code {
   position: absolute;
   z-index: 5;
   width: 100%;
+  height: 100%;
 }
 
 /* ============================================================================================== 
@@ -199,60 +200,60 @@ animation:move-twink-back 200s linear infinite;
 .ui.input {
   margin-bottom: 10px;
 }
-/*==================================
-  CARD
-====================================*/
-.card-container {
-  display: flex;
-  justify-content: space-around;
-}
+// /*==================================
+//   CARD
+// ====================================*/
+// .card-container {
+//   display: flex;
+//   justify-content: space-around;
+// }
 
-iframe {
-  width: 700px;
-  height: 400px;
-  position: relative;
-  z-index: 6;
-  border: 2px solid silver;
-}
+// iframe {
+//   width: 700px;
+//   height: 400px;
+//   position: relative;
+//   z-index: 6;
+//   border: 2px solid silver;
+// }
 
-.photo-frame {
-  width: 700px;
-  height: 400px;
-  position: relative;
-  z-index: 6;
-  border: 2px solid silver;
-}
+// .photo-frame {
+//   width: 700px;
+//   height: 400px;
+//   position: relative;
+//   z-index: 6;
+//   border: 2px solid silver;
+// }
 
-.left-child {
-  display: flex;
-  flex-direction: column;
-  justify-items: flex-start;
-  padding: 40px 40px 40px 60px;
+// .left-child {
+//   display: flex;
+//   flex-direction: column;
+//   justify-items: flex-start;
+//   padding: 40px 40px 40px 60px;
 
-  .photo-title {
-    display: flex;
-    width: 100%;
-    justify-self: baseline;
-    padding-bottom: 20px;
-    font-size: 1.5em;
-    position: relative;
-    z-index: 6;
-    color: white;
-  }
-}
+//   .photo-title {
+//     display: flex;
+//     width: 100%;
+//     justify-self: baseline;
+//     padding-bottom: 20px;
+//     font-size: 1.5em;
+//     position: relative;
+//     z-index: 6;
+//     color: white;
+//   }
+// }
 
-.right-child {
-  display: flex;
-  padding: 40px 60px 40px 0px;
+// .right-child {
+//   display: flex;
+//   padding: 40px 60px 40px 0px;
 
-  .explanation {
-    padding-top: 45px;
-    line-height: 1.5;
-    text-align: left;
-    padding-left: 0px;
-    position: relative;
-    z-index: 6;
-    color: white;
-  }
+//   .explanation {
+//     padding-top: 45px;
+//     line-height: 1.5;
+//     text-align: left;
+//     padding-left: 0px;
+//     position: relative;
+//     z-index: 6;
+//     color: white;
+//   }
   
-}
+// }

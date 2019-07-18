@@ -1,6 +1,45 @@
 import React from "react";
 import Frame from "./Frame";
+import styled from 'styled-components';
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const LeftChild = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  padding: 40px 40px 40px 60px;
+
+  h2 {
+    display: flex;
+    width: 100%;
+    justify-self: baseline;
+    padding-bottom: 20px;
+    font-size: 1.5em;
+    position: relative;
+    z-index: 6;
+    color: white;
+  }
+`;
+
+const RightChild = styled.div`
+  display: flex;
+  padding: 40px 60px 40px 0px;
+
+  p {
+    padding-top: 45px;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 0px;
+    position: relative;
+    z-index: 6;
+    color: white;
+  }
+
+`
 function Card({ title, media, mediaType, explanation }) {
   var tag;
   if (mediaType === 'image') {
@@ -9,15 +48,15 @@ function Card({ title, media, mediaType, explanation }) {
     tag = 'iframe';
   }
   return (
-    <div className="card-container">
-      <div className="left-child">
-        <h2 className="photo-title">"{title}"</h2>
+    <CardContainer>
+      <LeftChild>
+        <h2>"{title}"</h2>
         <Frame tag={tag} media={media}/>
-      </div>
-      <div className="right-child">
-        <p className="explanation">{explanation}</p>
-      </div>
-    </div>
+      </LeftChild>
+      <RightChild>
+        <p>{explanation}</p>
+      </RightChild>
+    </CardContainer>
   );
 }
 
