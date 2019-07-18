@@ -1,11 +1,12 @@
 import React from "react";
 
-function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setMessage }) {
+function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setDate }) {
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
   function handleSubmit(event) {
     event.preventDefault();
+    setDate(inputValue);
     setApi(api = apiString + `&date=${inputValue}`);
     setInputValue('');
     togglePopUp();

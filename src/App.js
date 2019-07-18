@@ -29,7 +29,7 @@ function App() {
       })
       .catch(error => {
         setPopUp(true);
-        setMessage('invalid data');    
+        setMessage('Invalid date.');    
       })
   }, [api])
   
@@ -52,7 +52,7 @@ function App() {
           <p className="date">{date}</p>
           <p className="date change" onClick={togglePopUp}>CHANGE</p>
           {popUp ? 
-          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString} message={message} setMessage={setMessage}/>
+          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString} message={message} setDate={setDate}/>
           : null
         }
         </div>
