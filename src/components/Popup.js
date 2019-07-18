@@ -1,6 +1,6 @@
 import React from "react";
 
-function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString }) {
+function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setMessage }) {
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
@@ -9,6 +9,7 @@ function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString 
     setApi(api = apiString + `&date=${inputValue}`);
     setInputValue('');
     togglePopUp();
+    console.log('here click')
   }
   return (
     <div className="popup">
@@ -17,6 +18,7 @@ function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString 
           <div className="popup-left">
             <input placeholder="yyyy-mm-dd" type="text" value={inputValue} onChange={handleInputChange} />
             <input className="btn-update" type="submit" value="UPDATE" />
+            <p style={{color: 'red'}}>{message}</p>
           </div>
           <button className="btn-close" onClick={() => togglePopUp()}>x</button>
         </div>

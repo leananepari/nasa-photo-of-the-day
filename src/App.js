@@ -12,6 +12,7 @@ function App() {
   const [explanation, setExplanation] = useState();
   const [popUp, setPopUp] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [message, setMessage] = useState('');
 
   let apiString = "https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ";
   const [api, setApi] = useState("https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ");
@@ -27,12 +28,16 @@ function App() {
         setExplanation(response.data.explanation);
       })
       .catch(error => {
-
+        setPopUp(true);
+        setMessage('invalid data');    
       })
   }, [api])
   
 
   function togglePopUp() {
+    if (setMessage !== '') {
+      setMessage('');
+    }
     setPopUp(!popUp);
   }
 
@@ -47,7 +52,7 @@ function App() {
           <p className="date">{date}</p>
           <p className="date change" onClick={togglePopUp}>CHANGE</p>
           {popUp ? 
-          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString}/>
+          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString} message={message} setMessage={setMessage}/>
           : null
         }
         </div>
