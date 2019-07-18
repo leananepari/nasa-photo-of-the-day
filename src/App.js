@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Card from "./components/Card";
 import Popup from "./components/Popup";
+import logo from ".//assets/nasa.png";
 
 function App() {
   const [date, setDate] = useState();
@@ -46,11 +47,15 @@ function App() {
       <div className="stars"></div>
       <div className="twinkling"></div>
       <div className="App">
-        <h1 className="title">NASA Astronomy Photo Of The Day</h1>
+        <div className="img-title-container">
+          <div className="img-wrap"><img className="logo" alt="" src={logo}/></div>
+          <h1 className="title">Astronomy Photo Of The Day</h1>
+          <p className="change" onClick={togglePopUp}>ENTER  DATE</p>
+        </div>
         <div className="date-container">
           <p className="date-title">Date: </p>
           <p className="date">{date}</p>
-          <p className="date change" onClick={togglePopUp}>CHANGE</p>
+          {/* <p className="date change" onClick={togglePopUp}>CHANGE</p> */}
           {popUp ? 
           <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString} message={message} setDate={setDate}/>
           : null

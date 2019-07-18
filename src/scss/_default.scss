@@ -95,15 +95,55 @@ animation:move-twink-back 200s linear infinite;
   text-align: center;
 }
 
-.title {
-  font-size: 2em;
-  padding: 40px;
-  position: relative;
-  z-index: 6;
-  color: white;
+.img-title-container {
+  display: flex;
+  text-align: center;
+  // justify-content: center;
+  
+  .img-wrap {
+    width: 200px;
+    // justify-self: baseline;
+    padding-left: 40px;
+    padding-top: 20px;
+    .logo {
+      position: relative;
+      z-index: 6;
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-size: 2em;
+    padding: 103px 0px 40px 0px;
+    position: relative;
+    z-index: 6;
+    color: white;
+    justify-self: center;
+    // margin: 0 auto;
+  }
+
+  .change {
+    justify-self: flex-end;
+    font-size: 1.5em;
+    // border: 2px solid white;
+    font-size: 1.2em;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-right: 70px;
+    line-height: 50px;
+    vertical-align: center;
+    position: relative;
+    z-index: 6;
+    color: white;
+    display: inline-block;
+    background: rgb(20, 61, 141);
+    align-self: center;
+  }
 }
 
 .date-container {
+
   .date-title {
     position: relative;
     z-index: 6;
@@ -156,8 +196,8 @@ animation:move-twink-back 200s linear infinite;
       position: absolute;
       left: 38%;
       right: 38%;
-      top: 25%;
-      bottom: 55%;
+      top: 38%;
+      bottom: 40%;
       margin: auto;
       background: white;
 
@@ -208,15 +248,17 @@ iframe {
   height: 400px;
   position: relative;
   z-index: 6;
-  border: 5px solid rgb(40, 103, 174);
+  // border: 5px solid rgb(40, 103, 174);
+  border: 2px solid silver;
 }
 
-img {
+.photo-frame {
   width: 700px;
   height: 400px;
   position: relative;
   z-index: 6;
-  border: 5px solid rgb(40, 103, 174);
+  // border: 5px solid rgb(40, 103, 174);
+  border: 2px solid silver;
 }
 
 .left-child {
