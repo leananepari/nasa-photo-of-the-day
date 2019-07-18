@@ -97,12 +97,10 @@ animation:move-twink-back 200s linear infinite;
 
 .img-title-container {
   display: flex;
-  text-align: center;
-  // justify-content: center;
+  align-content: center;
   
   .img-wrap {
     width: 200px;
-    // justify-self: baseline;
     padding-left: 40px;
     padding-top: 20px;
     .logo {
@@ -114,31 +112,11 @@ animation:move-twink-back 200s linear infinite;
 
   .title {
     font-size: 2em;
-    padding: 103px 0px 40px 0px;
+    line-height: 146px;
     position: relative;
     z-index: 6;
     color: white;
     justify-self: center;
-    // margin: 0 auto;
-  }
-
-  .change {
-    justify-self: flex-end;
-    font-size: 1.5em;
-    // border: 2px solid white;
-    font-size: 1.2em;
-    width: 200px;
-    height: 50px;
-    margin: 0 auto;
-    margin-right: 70px;
-    line-height: 50px;
-    vertical-align: center;
-    position: relative;
-    z-index: 6;
-    color: white;
-    display: inline-block;
-    background: rgb(20, 61, 141);
-    align-self: center;
   }
 }
 
@@ -170,13 +148,6 @@ animation:move-twink-back 200s linear infinite;
     display: inline-block;
   }
 
-  .change {
-    margin-left: 10px;
-    background: white;
-    color: black;
-    font-size: 1.4em;
-  }
-
   .popup {
     position: fixed;
     z-index: 7;
@@ -192,49 +163,42 @@ animation:move-twink-back 200s linear infinite;
 
     .popup_inner {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      padding: 0 20px 0 20px;
       position: absolute;
-      left: 38%;
-      right: 38%;
+      left: 36%;
+      right: 36%;
       top: 38%;
-      bottom: 40%;
+      bottom: 38%;
       margin: auto;
       background: white;
 
       .popup-left {
         display: flex;
         flex-direction: column;
-
-        input {
-          width: 200px;
-          height: 50px;
-          margin-top: 20px;
-          font-size: 1.5em;
-          
-        }
-        .btn-update {
-          width: 50%;
-          text-align: center;
-          justify-self: center;
-          margin: 0 auto;
-          margin-top: 10px;        
-        }
-
+        align-items: center;
         p {
           text-align: left;
-          padding-top: 10px;
         }
       }
 
       .btn-close {
-        height: 20px;
-        // margin-left: 20px;
-        justify-self: baseline;
+        height: 25px;
+        align-self: baseline;
+        margin: 0 auto;
+        top: 0px;
+        margin-right: 0px;
+        margin-bottom: 20px;
+        margin-top: 5px;
       }
     }
   }
 }
-
+.ui.input {
+  margin-bottom: 10px;
+}
 /*==================================
   CARD
 ====================================*/
@@ -248,7 +212,6 @@ iframe {
   height: 400px;
   position: relative;
   z-index: 6;
-  // border: 5px solid rgb(40, 103, 174);
   border: 2px solid silver;
 }
 
@@ -257,7 +220,6 @@ iframe {
   height: 400px;
   position: relative;
   z-index: 6;
-  // border: 5px solid rgb(40, 103, 174);
   border: 2px solid silver;
 }
 
@@ -284,7 +246,7 @@ iframe {
   padding: 40px 60px 40px 0px;
 
   .explanation {
-    padding-top: 35px;
+    padding-top: 45px;
     line-height: 1.5;
     text-align: left;
     padding-left: 0px;

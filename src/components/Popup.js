@@ -1,4 +1,5 @@
 import React from "react";
+import { Input, Button } from 'semantic-ui-react';
 
 function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setDate, }) {
   function handleInputChange(event) {
@@ -17,12 +18,13 @@ function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString,
     <div className="popup">
       <form onSubmit={handleSubmit}>
         <div className='popup_inner'>
-          <div className="popup-left">
-            <input placeholder="yyyy-mm-dd" type="text" value={inputValue} onChange={handleInputChange} />
-            <input className="btn-update" type="submit" value="UPDATE" />
-            <p style={{color: 'red'}}>{message}</p>
-          </div>
           <button className="btn-close" onClick={() => togglePopUp()}>x</button>
+          <Input placeholder="yyyy-mm-dd" type="text" value={inputValue} onChange={handleInputChange} 
+                style={{width: '80%', fontSize: '1.5em' }} 
+          />
+          <Button className="btn-update" type="submit" content='UPDATE' 
+          />
+          <p style={{color: 'red', marginTop: '5px'}}>{message}</p>
         </div>
       </form>
     </div>

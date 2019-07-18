@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { Button } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import Card from "./components/Card";
 import Popup from "./components/Popup";
@@ -53,12 +55,14 @@ function App() {
         <div className="img-title-container">
           <div className="img-wrap"><img className="logo" alt="" src={logo}/></div>
           <h1 className="title">Astronomy Photo Of The Day</h1>
-          <p className="change" onClick={togglePopUp}>ENTER  DATE</p>
+          <Button onClick={togglePopUp} content='UPDATE DATE' primary 
+                  style={{position: 'relative', zIndex: '6', display: 'inline-block', margin: '0 auto', 
+                  marginRight: '70px', alignSelf: 'center', fontSize: '1.2em', width: '180px', height: '50px'}}
+          />
         </div>
         <div className="date-container">
           <p className="date-title">Date: </p>
           <p className="date">{date}</p>
-          {/* <p className="date change" onClick={togglePopUp}>CHANGE</p> */}
           {popUp ? 
           <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} 
                  setApi={setApi} apiString={apiString} message={message} setDate={setDate}
