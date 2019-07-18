@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  // flex-wrap: wrap;
+  height: 100%;
 `;
 
 const LeftChild = styled.div`
@@ -30,8 +32,9 @@ const RightChild = styled.div`
   padding: 40px 60px 40px 0px;
 
   p {
-    padding-top: 45px;
-    line-height: 1.5;
+    padding-top: 55px;
+    font-size: 1.2em;
+    line-height: 1.6;
     text-align: left;
     padding-left: 0px;
     position: relative;
