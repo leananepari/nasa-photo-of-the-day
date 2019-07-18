@@ -1,6 +1,6 @@
 import React from "react";
 
-function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setDate }) {
+function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString, message, setDate, }) {
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
@@ -11,6 +11,7 @@ function Popup({ togglePopUp, inputValue, setInputValue, api, setApi, apiString,
     setInputValue('');
     togglePopUp();
     console.log('here click')
+
   }
   return (
     <div className="popup">

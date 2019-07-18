@@ -14,6 +14,7 @@ function App() {
   const [popUp, setPopUp] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [message, setMessage] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
 
   let apiString = "https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ";
   const [api, setApi] = useState("https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ");
@@ -27,16 +28,18 @@ function App() {
         setMedia(response.data.url);
         setMediaType(response.data.media_type);
         setExplanation(response.data.explanation);
+        setCurrentDate(response.data.date);
       })
       .catch(error => {
         setPopUp(true);
-        setMessage('Invalid date.');    
+        setMessage('Invalid date.');   
       })
   }, [api])
   
 
   function togglePopUp() {
-    if (setMessage !== '') {
+    if (message !== '') {
+      setDate(currentDate);
       setMessage('');
     }
     setPopUp(!popUp);
@@ -57,7 +60,9 @@ function App() {
           <p className="date">{date}</p>
           {/* <p className="date change" onClick={togglePopUp}>CHANGE</p> */}
           {popUp ? 
-          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString} message={message} setDate={setDate}/>
+          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} 
+                 setApi={setApi} apiString={apiString} message={message} setDate={setDate}
+               />
           : null
         }
         </div>
