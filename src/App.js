@@ -11,9 +11,14 @@ function App() {
   const [mediaType, setMediaType] = useState();
   const [explanation, setExplanation] = useState();
   const [popUp, setPopUp] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
+  let apiString = "https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ";
+  const [api, setApi] = useState("https://api.nasa.gov/planetary/apod?api_key=FyfffuzYMwaTRNfx1pMWhuuv5477KXk619RF9iTQ");
+
+ 
   useEffect(() => {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY") //&date=2012-03-14
+    axios.get(api) //&date=2012-03-14
       .then(response => {
         setDate(response.data.date);
         setTitle(response.data.title);
@@ -21,11 +26,16 @@ function App() {
         setMediaType(response.data.media_type);
         setExplanation(response.data.explanation);
       })
-  }, [])
+      .catch(error => {
+
+      })
+  }, [api])
+  
 
   function togglePopUp() {
     setPopUp(!popUp);
   }
+
   return (
     <div className="wrap">
       <div className="stars"></div>
@@ -37,7 +47,7 @@ function App() {
           <p className="date">{date}</p>
           <p className="date change" onClick={togglePopUp}>CHANGE</p>
           {popUp ? 
-          <Popup togglePopUp={togglePopUp}/>
+          <Popup togglePopUp={togglePopUp} inputValue={inputValue} setInputValue={setInputValue} api={api} setApi={setApi} apiString={apiString}/>
           : null
         }
         </div>
